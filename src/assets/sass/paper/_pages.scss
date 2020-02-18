@@ -1,0 +1,200 @@
+//contenido principal del inicio
+.loteria{
+		position: relative;
+		box-shadow: inset 0px -36px 35px 0px rgba(0,0,0,0.75);
+		overflow-x: hidden;
+		.contenido-loteria{
+		position: absolute;
+		top: 0;
+			.img-principal{
+				object-fit: cover;
+				display: flex;
+				z-index: -1;
+				width: 100%;
+				height: 90vh;
+				min-height: 300px;
+			}
+
+		}
+		.contenido-loteria2{
+			height: 90vh;
+			min-height: 300px;
+			a{
+				color: #fff;
+				font-size: 150px;
+				text-shadow: 3px 4px 4px $azul-oscuro;
+				width: 100%;
+				display: block;
+				i{
+					width: 100%;
+					
+				}
+				&:hover{
+					color: $dorado;
+				}
+			}
+			h2{
+				color: #fff;
+				position: relative;
+				font-size: 60px;
+				margin-bottom: 0px;
+				text-shadow: 3px 4px 4px $azul-oscuro;
+					@media screen and (max-width: 768px){
+						font-size: 	50px;
+						text-align: center;
+				 }
+				 &:before{
+			        content: "";
+			        border-radius: 20px;
+			        height: 4px;
+			        width: 10%;
+			        background: $dorado;
+			        position: absolute;
+			        bottom: -15px;
+			        left: 0px;
+			        box-shadow: 3px 3px 4px 0px #052f5f;
+			        	@media screen and (max-width: 768px){
+							width: 100%;		
+					 }
+			      }
+			}
+			h4{
+				color: #fff;
+				font-weight: 400;
+				font-size: 35px;
+				text-shadow: 3px 4px 4px $azul-oscuro;
+				@media screen and (max-width: 768px){
+					text-align: center;
+						
+				 }
+			}
+		}
+		&:after {
+		    content: '';
+		    position: absolute;
+		    bottom: 0em;
+		    left: 0;
+		    border-bottom: solid 100px $azul-oscuro;
+		    border-left: solid 100vw transparent;
+		}
+		
+	}
+	//cotenido principal de las internas
+
+.loteria-interna{
+		position: relative;
+		box-shadow: inset 0px -36px 35px 0px rgba(0,0,0,0.75);
+		overflow-x: hidden;
+		.contenido-loteria{
+		position: absolute;
+		top: 0;
+			.img-principal{
+				object-fit: cover;
+				display: flex;
+				z-index: -1;
+				width: 100%;
+				height: 400px;
+			}
+
+		}
+		.contenido-loteria2{
+			height: 400px	;
+			min-height: 300px;
+			a{
+				color: #fff;
+				font-size: 150px;
+				text-shadow: 3px 4px 4px $azul-oscuro;
+				&:hover{
+					color: $dorado;
+				}
+			}
+			h2{
+				color: #fff;
+				position: relative;
+				font-size: 60px;
+				margin-bottom: 0px;
+				text-shadow: 3px 4px 4px $azul-oscuro;
+				 &:before{
+			        content: "";
+			        border-radius: 20px;
+			        height: 4px;
+			        width: 10%;
+			        background: $dorado;
+			        position: absolute;
+			        bottom: -15px;
+			        left: 0px;
+			        box-shadow: 3px 3px 4px 0px #052f5f;
+			      }
+			}
+			h4{
+				color: #fff;
+				font-weight: 400;
+				font-size: 35px;
+				text-shadow: 3px 4px 4px $azul-oscuro;
+			}
+		}
+		&:after {
+		    content: '';
+		    position: absolute;
+		    bottom: 0em;
+		    left: 0;
+		    border-bottom: solid 100px #fff;
+		    border-left: solid 100vw transparent;
+		}
+		
+}
+
+
+.contenido-internas{
+		padding: 100px 0px;
+		.carousel-imagenes{
+			img{
+				height: 400px;
+				object-fit: cover;
+			}
+		}
+		
+			h3, h2{
+				font-weight: 900;
+				color: $azul-oscuro;
+				position: relative;
+				font-size: 30px;
+				margin-bottom: 30px;
+				display: inline-block;
+				 &:before{
+			        content: "";
+			        border-radius: 20px;
+			        height: 4px;
+			        width: 50%;
+			        background: $dorado;
+			        position: absolute;
+			        bottom: -15px;
+			        left: 0px;
+			        box-shadow: 3px 3px 4px 0px #052f5f;
+			      }
+			}
+			p,li{
+				font-size: 18px;
+				color: $oscuro;
+				font-family: $ff;
+				text-align: justify;
+				margin: 10px 0px;
+
+			}
+			a{
+				background: $azul-oscuro;
+  color: #fff;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 25px;
+  margin: 30px 0px;
+  float: right;
+  text-transform:uppercase;
+  &:hover{
+  color: $azul-oscuro;
+  background: #fff;
+  border: 1px solid $azul-oscuro;
+  }
+			}
+		}
+	
