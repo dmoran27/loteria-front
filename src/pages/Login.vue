@@ -67,7 +67,7 @@
 
 <script>
    import axios from "axios";
-   import API_ENDPOINT from './../environments/apiEndPoint';
+   import API_ENDPOINT from '@/environments/apiEndPoint';
 
    export default {
    	

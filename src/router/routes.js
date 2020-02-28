@@ -5,6 +5,25 @@ import NotFound from "@/pages/NotFoundPage.vue";
 import UnderConstruction from "@/pages/UnderConstruction.vue";
 
 // Admin pages
+import ProveedoresIndex from "@/pages/admin/proveedores/index.vue";
+import ProveedoresCreate from "@/pages/admin/proveedores/create.vue";
+import ProveedoresShow from "@/pages/admin/proveedores/show.vue";
+
+
+
+import PresupuestosIndex from "@/pages/admin/presupuestos/index.vue";
+
+import DepartamentosIndex from "@/pages/admin/departamentos/index.vue";
+import EmpleadosIndex from "@/pages/admin/empleados/index.vue";
+import ClientesIndex from "@/pages/admin/clientes/index.vue";
+import CitasIndex from "@/pages/admin/citas/index.vue";
+import SolicitudesIndex from "@/pages/admin/solicitudes/index.vue";
+import BeneficiosIndex from "@/pages/admin/beneficios/index.vue";
+import TipoorganizacionIndex from "@/pages/admin/tipoorganizacion/index.vue";
+
+
+
+
 import Dashboard from "@/pages/admin/Dashboard.vue";
 import Notifications from "@/pages/admin/Notifications.vue";
 import Proveedores from "@/pages/admin/Proveedores.vue";
@@ -51,14 +70,13 @@ const routes = [
         }
       },
       {
-        path: "perfil/:id",
+        path: "perfil",
         name: "perfil",
         component: Perfil,
         meta: {
           permissions: [
             {
               role: "cliente",
-              access: (user, to) => user.id === to.params.id,
               redirect: "login"
             },
           ]
@@ -120,47 +138,57 @@ const routes = [
   {
   path: "/admin",
     component: DashboardLayout,
-    redirect: "/dashboard",
+    redirect: "/admin/dashboard",
     children: [
       {
-        path: "/dashboard",
+        path: "/admin/dashboard",
         name: "dashboard",
-        component: Dashboard
+        component: Dashboard,
       },
       {
-        path: "/empleados",
+        path: "/admin/empleados",
         name: "empleados",
-        component: Dashboard
+        component: EmpleadosIndex,
       },
       {
-        path: "/clientes",
+        path: "/admin/clientes",
         name: "clientes",
-        component: Dashboard
+        component: ClientesIndex,
       },
       {
-        path: "/presupuestos",
+        path: "/admin/presupuestos",
         name: "presupuestos",
-        component: Dashboard
+        component: PresupuestosIndex,
       },
       {
-        path: "/proveedores",
+        path: "/admin/proveedores",
         name: "proveedores",
-        component: Dashboard
+        component: ProveedoresIndex,
       },
       {
-        path: "/departamentos",
+        path: "/admin/proveedores/create",
+        name: "Nuevo Proveedor",
+        component: ProveedoresCreate,
+      },
+      {
+        path: "/admin/proveedores/:id",
+        name: "Detalles del proveedor",
+        component: ProveedoresShow,
+      },
+      {
+        path: "/admin/departamentos",
         name: "departamentos",
-        component: Dashboard
+        component: DepartamentosIndex,
       },
       {
-        path: "/expedientes",
-        name: "expedientes",
-        component: Dashboard
+        path: "/admin/solicitudes",
+        name: "solicitudes",
+        component: SolicitudesIndex,
       },
       {
-        path: "/citas",
+        path: "/admin/citas",
         name: "citas",
-        component: Dashboard
+        component: CitasIndex,
       },
       
 

@@ -65,6 +65,8 @@ import FlatPicker from "vue-flatpickr-component";
 import OwlCarousel from 'vue-owl-carousel';
 import { Carousel, Slide } from 'vue-carousel';
 
+import axios from "axios";
+import API_ENDPOINT from '@/environments/apiEndPoint';
 export default {
     components: { 
     	OwlCarousel ,
@@ -72,12 +74,21 @@ export default {
     	Slide,
     	FlatPicker,
 	  },
+	  created(){
+	  	this.getuser();
+	  },
 	  methods: {
-	    toggleSidebar() {
-	      if (this.$sidebar.showSidebar) {
-	        this.$sidebar.displaySidebar(false);
-	      }
-	    }
+	    getuser(){
+         		axios.post(API_ENDPOINT +'auth/user',{},{
+	    		headers: {
+                     'Content-Type': 'application/json',
+                     'Authorization': "Bearer " + localStorage.access_token,
+                     
+                  }}).then((response) => {
+	    		console.log(response);
+            });
+					
+		},
 	  }
 };
 </script>

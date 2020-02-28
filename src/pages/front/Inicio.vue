@@ -12,7 +12,7 @@
 					<h4>La Loteria de la Gente</h4>
 				</div>
 				<div class="col-12 text-center">
-					<a href="#"><i class="fa fa-angle-double-down"></i></a>
+					<a @click=" scrollToTop() "><i class="fa fa-angle-double-down"></i></a>
 				</div>
 			</div>
 		</div>
@@ -158,7 +158,7 @@
 				</div>
 		</div-->
 		
-		<div class="bg-azul-oscuro beneficios cita" id="#cita">
+		<div class="bg-azul-oscuro beneficios cita" id="#cita" ref="section">
 			<div class="container">
 				<div class="row  py-5">
 					<div class="col-12 col-md-6">
@@ -206,11 +206,12 @@ export default {
     	FlatPicker,
 	  },
 	  methods: {
-	    toggleSidebar() {
-	      if (this.$sidebar.showSidebar) {
-	        this.$sidebar.displaySidebar(false);
-	      }
-	    }
+	     scrollToTop() {
+     var element = document.getElementById("#cita");
+  var top = element.offsetTop;
+  window.scrollTo(0, top);
+  }
+
 	  }
 };
 </script>

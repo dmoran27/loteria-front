@@ -14,29 +14,31 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="ti-panel"></i>
-              <p>Stats</p>
-            </a>
-          </li>
-          <drop-down class="nav-item"
-                     title="5 Notifications"
-                     title-classes="nav-link"
-                     icon="ti-bell">
-            <a class="dropdown-item" href="#">Notification 1</a>
-            <a class="dropdown-item" href="#">Notification 2</a>
-            <a class="dropdown-item" href="#">Notification 3</a>
-            <a class="dropdown-item" href="#">Notification 4</a>
-            <a class="dropdown-item" href="#">Another notification</a>
-          </drop-down>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="ti-settings"></i>
-              <p>
-                Settings
-              </p>
-            </a>
-          </li>
+          <a class="nav-link">
+            <i class="ti-user"></i>
+            <p>Perfil</p>
+          </a>
+        </li>
+        <drop-down class="nav-item"
+                   title="Notificaciones"
+                   title-classes="nav-link"
+                   icon="ti-bell">
+          <a class="dropdown-item">Notificacion1</a>
+        </drop-down>
+        <drop-down class="nav-item"
+                   title="Configuraciones"
+                   title-classes="nav-link"
+                   icon="ti-settings">
+          <a class="dropdown-item">Beneficios</a>
+          <a class="dropdown-item">Organizaciones</a>
+          <a class="dropdown-item">Disponibilidad de Fechas</a>
+        </drop-down>
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="ti-ext"></i>
+            <p>Salir</p>
+          </a>
+        </li>
         </ul>
       </div>
     </div></nav>

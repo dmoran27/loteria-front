@@ -2,35 +2,53 @@
   <div class="wrapper">
     <side-bar>
       <template slot="links">
-        <sidebar-link to="/dashboard" name="Dashboard" icon="ti-panel"/>
+        <sidebar-link to="/admin/dashboard" name="Inicio" />
         
-        <sidebar-link to="/table-list" name="Table List" icon="ti-view-list-alt"/>
-        <sidebar-link to="/typography" name="Typography" icon="ti-text"/>
-        <sidebar-link to="/icons" name="Icons" icon="ti-pencil-alt2"/>
-        <sidebar-link to="/maps" name="Map" icon="ti-map"/>
-        <sidebar-link to="/notifications" name="Notifications" icon="ti-bell"/>
+        <sidebar-link to="/admin/solicitudes" name="Solicitudes" />
+        <sidebar-link to="/admin/clientes" name="Clientes" />
+        <sidebar-link to="/admin/finanzas" name="Finanzas" />
+        <sidebar-link to="/admin/inventario" name="Inventario" />
+        <sidebar-link to="/admin/presupuesto" name="Presupuesto" />
+        <sidebar-link to="/admin/proveedores" name="Proveedores" />
+        <sidebar-link to="/admin/empleados" name="Empleados" />
+        <sidebar-link to="/admin/departamentos" name="Departamentos" />
+        <sidebar-link to="/admin/administracion" name="Administracion" />
+        
+
+
+
+
+
+
+
+
       </template>
       <mobile-menu>
-        <li class="nav-item">
+         <li class="nav-item">
           <a class="nav-link">
-            <i class="ti-panel"></i>
-            <p>Stats</p>
+            <i class="ti-user"></i>
+            <p>Perfil</p>
           </a>
         </li>
         <drop-down class="nav-item"
-                   title="5 Notifications"
+                   title="Notificaciones"
                    title-classes="nav-link"
                    icon="ti-bell">
-          <a class="dropdown-item">Notification 1</a>
-          <a class="dropdown-item">Notification 2</a>
-          <a class="dropdown-item">Notification 3</a>
-          <a class="dropdown-item">Notification 4</a>
-          <a class="dropdown-item">Another notification</a>
+          <a class="dropdown-item">Notificacion1</a>
+        </drop-down>
+        <drop-down class="nav-item"
+                   title="Configuraciones"
+                   title-classes="nav-link"
+                   icon="ti-settings">
+          
+          <a class="dropdown-item">Beneficios</a>
+          <a class="dropdown-item">Organizaciones</a>
+          <a class="dropdown-item">Disponibilidad de Fechas</a>
         </drop-down>
         <li class="nav-item">
           <a class="nav-link">
-            <i class="ti-settings"></i>
-            <p>Settings</p>
+            <i class="ti-ext"></i>
+            <p>Salir</p>
           </a>
         </li>
         <li class="divider"></li>
@@ -42,8 +60,6 @@
       <dashboard-content @click.native="toggleSidebar">
 
       </dashboard-content>
-
-      <footer></footer>
     </div>
   </div>
 </template>

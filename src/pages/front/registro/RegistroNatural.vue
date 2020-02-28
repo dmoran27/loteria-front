@@ -103,8 +103,8 @@
 				 
 				        <div class="row">
 				  		 <div class="col-md-6 col-lg-4">
-				            <label for="tipod">Genero * </label>
-							    <select class="form-control" id="tipod" v-model="user.genero">
+				            <label for="genero">Genero * </label>
+							    <select class="form-control" id="genero" v-model="user.genero">
 							      <option value="F">Femenino</option>
 							      <option value="M">Masculino</option>
 							    </select>

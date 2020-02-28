@@ -38,8 +38,7 @@
 					       		<router-link :to="{path:'/login'}" v-if='!token'>Iniciar Sesion</router-link>
 					       		<a  @click.prevent="logout" v-else>Cerrar Sesion</a>
 					          </li>
-					          <li  v-if='token'>  
-					            <router-link :to="{path:'/perfil'}">Perfil</router-link>
+					          <li  v-if='token'>					            <router-link :to="{path:'/perfil'}">Perfil</router-link>
 					          </li>
 					          <drop-down title='Registrarse' v-if='!token'> 
 					          	<router-link :to="{path:'/registro-natural'}" class='d-block'>Persona Natural</router-link>
@@ -77,6 +76,7 @@ import axios from "axios";
 import API_ENDPOINT from '@/environments/apiEndPoint';
 
 export default {
+
     components: { 
     	OwlCarousel ,
     	Carousel,
@@ -97,24 +97,51 @@ export default {
         });
       },
       created(){
-        this.isLogged();
+       this.isLog();
       },
 	  methods: {
-	    toggleSidebar() {
-	      if (this.$sidebar.showSidebar) {
-	        this.$sidebar.displaySidebar(false);
-	      }
+	    isLog() {
+	    	if(localStorage.getItem('access_token')){
+	    		this.token=true;
+	    	}
+	    	else{
+	    		this.token=false;
+	    	}
 	    },
-	    isLogged(){
+	    isLoggedd(){
 	    	if(localStorage.access_token){
 	    		this.token= true;
-	    	}
+	    		axios.post(API_ENDPOINT +'auth/user',{},{
+	    		headers: {
+                     'Content-Type': 'application/json',
+                     'Authorization': "Bearer " + localStorage.access_token,
+                     
+                  }}).then((response) => {
+	    		console.log(response);
+	    		window.auth_user = response;
+	    	})
+              }
 	    	else{
 	    		this.token= false;
 	    	}
+
+
+
 	    },
+	    role(){
+			if(localStorage.access_token){
+	            axios.post(API_ENDPOINT +'auth/user',{},{
+	            headers: {
+	                 'Content-Type': 'application/json',
+	                 'Authorization': "Bearer " + this.state.token,
+	                 
+	              }}).then((response) => {
+	                localStorage.setItem('rol', res.data.response.data.rol[0].nombre);
+	            })
+	         }
+		},
 	    logout(){
-	    	axios.get(API_ENDPOINT + 'auth/logout',
+	    	axios.post(API_ENDPOINT + 'auth/logout',
             
                {
                   headers: {
@@ -126,7 +153,10 @@ export default {
                ).then(res => {
                		localStorage.removeItem('access_token')                 
                     this.$notify({ group: 'auth', type:'success', title: 'Sesion cerrada' });  
-             		this.isLogged();  
+             		this.isLoggedd();  
+             		setTimeout(function(){
+                            window.location.href="/";
+                        },2000);
 
                }).catch( error=> {
                 
