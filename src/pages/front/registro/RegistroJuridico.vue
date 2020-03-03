@@ -354,6 +354,8 @@ export default {
                   headers: {
                      'Content-Type': 'application/json',
                      
+
+                     
                   }
                }
                ).then(res => {
@@ -381,6 +383,8 @@ export default {
 	    		headers: {
                      'Content-Type': 'application/json',
                      
+
+                     
                   }}).then((response) => {
 	    		console.log(response);
                 this.tipoorganizacion = response.data;
@@ -390,10 +394,11 @@ export default {
 
 	    
 	    est(){
-	    	axios.get(API_ENDPOINT +'estados/',{},{
+	    	axios.get(API_ENDPOINT +'estados',{},{
 	    		headers: {
                      'Content-Type': 'application/json',
                      
+
                   }}).then((response) => {
 	    		
                 this.estados = response.data;
@@ -401,9 +406,13 @@ export default {
 	    },
 	    changeEstado(){
 	    	this.municipios=[];
-	    	axios.get(API_ENDPOINT +'municipios/?estado_id='+this.estado_seleccionado.id,{},{
+	    	axios.get(API_ENDPOINT +'municipios',
+	    		{'estado_id': this.estado_seleccionado.id},
+	    		{
 	    		headers: {
                      'Content-Type': 'application/json',
+                     
+
                      
                   }}).then((response) => {
 	    		this.municipio_seleccionado="";
@@ -412,9 +421,16 @@ export default {
 	    },
 	    changeMunicipio(){
 	    	this.parroquia=[];
-	    	axios.get(API_ENDPOINT +'parroquias/?municipio_id='+this.municipio_seleccionado.id,{},{
+	    	axios.get(API_ENDPOINT +'parroquias',
+	    		{'municipio_id': this.municipio_seleccionado.id},
+	    		{
 	    		headers: {
                      'Content-Type': 'application/json',
+                     'Accept': 'application/json',
+                     
+
+
+ 
                      
                   }}).then((response) => {
 	    		this.parroquia_seleccionado="";

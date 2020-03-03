@@ -141,7 +141,7 @@ export default {
 	         }
 		},
 	    logout(){
-	    	axios.post(API_ENDPOINT + 'auth/logout',
+	    	axios.get(API_ENDPOINT + 'auth/logout',
             
                {
                   headers: {

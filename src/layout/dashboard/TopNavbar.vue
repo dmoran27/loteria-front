@@ -19,19 +19,15 @@
             <p>Perfil</p>
           </a>
         </li>
-        <drop-down class="nav-item"
-                   title="Notificaciones"
-                   title-classes="nav-link"
-                   icon="ti-bell">
-          <a class="dropdown-item">Notificacion1</a>
-        </drop-down>
+        
         <drop-down class="nav-item"
                    title="Configuraciones"
                    title-classes="nav-link"
                    icon="ti-settings">
-          <a class="dropdown-item">Beneficios</a>
-          <a class="dropdown-item">Organizaciones</a>
-          <a class="dropdown-item">Disponibilidad de Fechas</a>
+          
+          <router-link class= "dropdown-item" :to="{path:'/admin/beneficios'}">Beneficios</router-link>
+          <router-link class= "dropdown-item" :to="{path:'/admin/tipoorganizacion'}">Organizaciones</router-link>
+          <router-link class= "dropdown-item" :to="{path:'/admin/disponibilidades'}">Disponibilidad de Fechas</router-link>
         </drop-down>
         <li class="nav-item">
           <a class="nav-link">

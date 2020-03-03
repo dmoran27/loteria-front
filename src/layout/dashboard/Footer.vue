@@ -8,7 +8,6 @@
         <nav>
         <ul>
           <li>
-            <router-link :to="{path:'/beneficios'}">Sobre Nosotros</router-link>
             <router-link :to="{path:'/contactanos'}">Beneficios</router-link>
             <router-link :to="{path:'/nosotros'}">Contactanos</router-link>
           </li>

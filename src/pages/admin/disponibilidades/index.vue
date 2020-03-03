@@ -3,10 +3,10 @@
     <div class="container">
         <div class="row"> 
             <div class="col-12 text-center text-md-right">
-               <a @click="create()" class="btn btn-primary text-white text-white">Registrar Nuevo Departamento</a>
+               <a @click="create()" class="btn btn-primary text-white text-white">Registrar Nueva Disponibilidad de fecha</a>
             </div>      
             <div class="col-12">
-              <h2 class="text-center">Listado de departamentos </h2>
+              <h2 class="text-center">Listado de disponibilidades </h2>
             </div>
 <modal 
                        ref="close"
@@ -21,10 +21,10 @@
                           <div class="container"> 
                               <div class="row"> 
                                     <a @click="salir()" class="text-danger col-12 text-md-right"><i class="fa fa-times text-danger"></i></a>
-                          <h2 class="text-center col-12">Registrar Departamento </h2>
+                          <h2 class="text-center col-12">Registrar disponibilidades </h2>
                               </div>
                           </div>
-                          <departamentos-create></departamentos-create>
+                          <disponibilidad-create></disponibilidad-create>
    
                         </div>
                       </modal>   
@@ -52,10 +52,10 @@
                           <div class="container"> 
                               <div class="row"> 
                                     <a @click="saliredit(row.id)" class="text-danger col-12 text-md-right"><i class="fa fa-times text-danger"></i></a>
-                          <h2 class="text-center col-12">Editar Departamento </h2>
+                          <h2 class="text-center col-12">Editar disponibilidades </h2>
                               </div>
                           </div>
-                          <departamentos-edit :data="row"></departamentos-edit>   
+                          <disponibilidad-edit :data="row"></disponibilidad-edit>   
                         </div>
                       </modal>
                       <modal 
@@ -69,11 +69,11 @@
 
                           >
                         <div class="example-modal-content">
-                          <departamentos-show
-                            titulo="Detalles del Departamento"
+                          <disponibilidad-show
+                            titulo="Detalles de la cita"
                             :data="row"
-                            :columns="['Id',  'Nombre', 'Descripcion']"
-                          ></departamentos-show>   
+                            :columns="['Id',  'fecha', 'hora de inicio', 'hora de fin']"
+                          ></disponibilidad-show>   
                         </div>
                       </modal>
                   </span>
@@ -88,29 +88,30 @@
   
   import axios from "axios";
    import API_ENDPOINT from '@/environments/apiEndPoint';
-   import DepartamentosEdit from '@/pages/admin/departamentos/edit.vue';
-   import DepartamentosShow from '@/pages/admin/departamentos/show.vue';
-   import DepartamentosCreate from '@/pages/admin/departamentos/create.vue';
+   import DisponibilidadEdit from '@/pages/admin/disponibilidades/edit.vue';
+   import DisponibilidadShow from '@/pages/admin/disponibilidades/show.vue';
+   import DisponibilidadCreate from '@/pages/admin/disponibilidades/create.vue';
    
 
   export default {
       components: { 
-      DepartamentosShow,
-      DepartamentosEdit,
-      DepartamentosCreate,
+     DisponibilidadShow,
+     DisponibilidadEdit,
+     DisponibilidadCreate,
     }, 
         data() {
             return {
                open: false,
                modalOpen: false,
-                columns: ['id',  'nombre', 'descripcion', 'action',],
+                columns: ['id',  'fecha', 'horainicio', 'horafin', 'action',],
 
                 options: {
                     headings: {
                       
                         id :'ID',
-                        nombre:'Nombre',
-                        descripcion:'Descripcion',
+                        fecha:'Fecha',
+                        horainicio:'Hora de inicio disponible',
+                        horafin:'Hora final disponible',
                         action: 'Accion',
                     },
                     
@@ -138,11 +139,11 @@
                     limit:10,
                     perPage: 10,
                     perPageValues: [10,20,25,50,100],
-                    sortable:['id',  'nombre', 'descripcion'],
-                    filterable: ['id',  'nombre', 'descripcion'],
+                    sortable:['id',  'fecha', 'horainicio', 'horafin'],
+                    filterable: ['id',  'fecha', 'horainicio', 'horafin'],
                     requestFunction: function (data) {
                         console.log(data);
-                        return axios.get(API_ENDPOINT +'departamentos', { params: data }).catch(function (e) {
+                        return axios.get(API_ENDPOINT +'disponibilidades', { params: data }).catch(function (e) {
                             self.dispatch('error', e);
                         }.bind(this));
                     },
@@ -181,7 +182,7 @@
         this.$modal.hide('modalcreate');  
      },
     deletes (id) {   
-      axios.delete(API_ENDPOINT + 'departamentos' + '/'+id,{},{
+      axios.delete(API_ENDPOINT + 'disponibilidades' + '/'+id,{},{
          headers: {
             'Content-Type': 'application/json',
             'Authorization': "Bearer " + localStorage.access_token,

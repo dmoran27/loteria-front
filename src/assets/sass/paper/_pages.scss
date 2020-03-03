@@ -198,3 +198,174 @@
 			}
 		}
 	
+
+	.contenido-internas{
+		padding: 100px 0px;
+		.carousel-imagenes{
+			img{
+				height: 400px;
+				object-fit: cover;
+			}
+		}
+		
+			h3, h2{
+				font-weight: 900;
+				color: $azul-oscuro;
+				position: relative;
+				font-size: 30px;
+				margin-bottom: 30px;
+				display: inline-block;
+				 &:before{
+			        content: "";
+			        border-radius: 20px;
+			        height: 4px;
+			        width: 50%;
+			        background: $dorado;
+			        position: absolute;
+			        bottom: -15px;
+			        left: 0px;
+			        box-shadow: 3px 3px 4px 0px #052f5f;
+			      }
+			}
+			p,li{
+				font-size: 18px;
+				color: $oscuro;
+				font-family: $ff;
+				text-align: justify;
+				margin: 10px 0px;
+
+			}
+			a{
+				background: $azul-oscuro;
+  color: #fff;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 25px;
+  margin: 30px 0px;
+  float: right;
+  text-transform:uppercase;
+  &:hover{
+  color: $azul-oscuro;
+  background: #fff;
+  border: 1px solid $azul-oscuro;
+  }
+			}
+		}
+	
+
+	.is-invalid-select{
+		.vs__dropdown-toggle{
+				border: 1px solid #dc3545 !important;
+		}
+	}
+	
+	
+	
+    .VuePagination {
+        text-align: center;
+    }
+ 
+    .vue-title {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+ 
+    .vue-pagination-ad {
+        text-align: center;
+    }
+ 
+    .glyphicon.glyphicon-eye-open {
+        width: 16px;
+        display: block;
+        margin: 0 auto;
+    }
+ 
+    th:nth-child(3) {
+        text-align: center;
+    }
+ 
+    .VueTables__child-row-toggler {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+ 
+    .VueTables {
+        margin-top:20px;
+    }
+    .VueTables__table thead tr{
+      background:  #212120c4;
+      color: #fff;
+    }
+    .VueTables__child-row-toggler--closed::before {
+        content: "+";
+    }
+ 
+    .VueTables__limit-field{
+        margin-top:30px;
+    }
+    .VueTables__child-row-toggler--open::before {
+        content: "-";
+    }
+ 
+    .VuePagination nav{
+        background-color: transparent !important;
+        color:black;
+        box-shadow: none;
+        text-align: right;
+        padding:0px;
+    }
+    .VuePagination nav ul{
+        float:right;
+        margin:0px;
+    }
+    .VuePagination nav p{
+        text-align: right;
+        padding:0px;
+    }
+    .VueTables__search{
+      height: 100% !important;
+    }
+    @media (min-width: 576px){
+     form-inline label{
+      text-align: left !important;
+    }
+    }
+    .table-striped tbody > tr:nth-of-type(2n) {
+        background-color: #f2f2f2 !important;
+    }
+
+    
+.VuePagination nav{
+width: 100%;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-wrap: wrap;
+}
+.VuePagination .page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #7A9E9F !important;
+    border-color: #7A9E9F !important;
+}
+
+
+.VuePagination .page-link {
+    color: #212120c4 !important;
+    border: 1px solid #212120c4 !important;
+}
+
+.VuePagination p{
+	color: #212120c4 !important;
+	margin-top: 20px;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #7A9E9F;
+}

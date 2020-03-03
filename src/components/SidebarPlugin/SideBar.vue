@@ -13,7 +13,7 @@
             <div class="logo-img">
                 <img src="@/assets/img/logo.jpg" alt="">
             </div>
-          {{title}}
+          Loteria de Oriente
         </a>
       </div>
       <slot>

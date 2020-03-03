@@ -5,7 +5,7 @@
         <sidebar-link to="/admin/dashboard" name="Inicio" />
         
         <sidebar-link to="/admin/solicitudes" name="Solicitudes" />
-        <sidebar-link to="/admin/clientes" name="Clientes" />
+        <sidebar-link to="/admin/citas" name="Citas" />
         <sidebar-link to="/admin/finanzas" name="Finanzas" />
         <sidebar-link to="/admin/inventario" name="Inventario" />
         <sidebar-link to="/admin/presupuesto" name="Presupuesto" />
@@ -13,15 +13,6 @@
         <sidebar-link to="/admin/empleados" name="Empleados" />
         <sidebar-link to="/admin/departamentos" name="Departamentos" />
         <sidebar-link to="/admin/administracion" name="Administracion" />
-        
-
-
-
-
-
-
-
-
       </template>
       <mobile-menu>
          <li class="nav-item">
@@ -30,20 +21,15 @@
             <p>Perfil</p>
           </a>
         </li>
-        <drop-down class="nav-item"
-                   title="Notificaciones"
-                   title-classes="nav-link"
-                   icon="ti-bell">
-          <a class="dropdown-item">Notificacion1</a>
-        </drop-down>
+        
         <drop-down class="nav-item"
                    title="Configuraciones"
                    title-classes="nav-link"
                    icon="ti-settings">
           
-          <a class="dropdown-item">Beneficios</a>
-          <a class="dropdown-item">Organizaciones</a>
-          <a class="dropdown-item">Disponibilidad de Fechas</a>
+          <router-link class= "dropdown-item" :to="{path:'/admin/beneficios'}">Beneficios</router-link>
+          <router-link class= "dropdown-item" :to="{path:'/admin/tipoorganizacion'}">Organizaciones</router-link>
+          <router-link class= "dropdown-item" :to="{path:'/admin/disponibilidades'}">Disponibilidad de Fechas</router-link>
         </drop-down>
         <li class="nav-item">
           <a class="nav-link">

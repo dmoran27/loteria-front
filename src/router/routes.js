@@ -7,23 +7,23 @@ import UnderConstruction from "@/pages/UnderConstruction.vue";
 // Admin pages
 import ProveedoresIndex from "@/pages/admin/proveedores/index.vue";
 import ProveedoresCreate from "@/pages/admin/proveedores/create.vue";
-import ProveedoresShow from "@/pages/admin/proveedores/show.vue";
+import EmpleadosIndex from "@/pages/admin/empleados/index.vue";
+import EmpleadosCreate from "@/pages/admin/empleados/create.vue";
+import EmpleadosEdit from "@/pages/admin/empleados/edit.vue";
+import ClientesIndex from "@/pages/admin/clientes/index.vue";
+import ClientesCreate from "@/pages/admin/clientes/create.vue";
+
+import DepartamentosIndex from "@/pages/admin/departamentos/index.vue";
+import TipoorganizacionIndex from "@/pages/admin/tipoorganizacion/index.vue";
+import CitasIndex from "@/pages/admin/citas/index.vue";
+import DisponibilidadesIndex from "@/pages/admin/disponibilidades/index.vue";
+import BeneficiosIndex from "@/pages/admin/beneficios/index.vue";
+
 
 
 
 import PresupuestosIndex from "@/pages/admin/presupuestos/index.vue";
-
-import DepartamentosIndex from "@/pages/admin/departamentos/index.vue";
-import EmpleadosIndex from "@/pages/admin/empleados/index.vue";
-import ClientesIndex from "@/pages/admin/clientes/index.vue";
-import CitasIndex from "@/pages/admin/citas/index.vue";
 import SolicitudesIndex from "@/pages/admin/solicitudes/index.vue";
-import BeneficiosIndex from "@/pages/admin/beneficios/index.vue";
-import TipoorganizacionIndex from "@/pages/admin/tipoorganizacion/index.vue";
-
-
-
-
 import Dashboard from "@/pages/admin/Dashboard.vue";
 import Notifications from "@/pages/admin/Notifications.vue";
 import Proveedores from "@/pages/admin/Proveedores.vue";
@@ -142,54 +142,86 @@ const routes = [
     children: [
       {
         path: "/admin/dashboard",
-        name: "dashboard",
+        name: "Panel Principal",
         component: Dashboard,
       },
       {
         path: "/admin/empleados",
-        name: "empleados",
+        name: "Listado de empleados",
         component: EmpleadosIndex,
       },
       {
+        path: "/admin/empleados/:id",
+        name: "Editar de empleado",
+        component: EmpleadosEdit,
+      },
+      {
+        path: "/admin/empleados/create",
+        name: "Registrar Empleado",
+        component: EmpleadosCreate,
+      },
+      {
         path: "/admin/clientes",
-        name: "clientes",
+        name: "Listado de clientes",
         component: ClientesIndex,
       },
       {
-        path: "/admin/presupuestos",
-        name: "presupuestos",
-        component: PresupuestosIndex,
+        path: "/admin/clientes/create",
+        name: "Registrar Cliente",
+        component: ClientesCreate,
       },
+
       {
         path: "/admin/proveedores",
-        name: "proveedores",
+        name: "Listado de proveedores",
         component: ProveedoresIndex,
       },
       {
         path: "/admin/proveedores/create",
-        name: "Nuevo Proveedor",
+        name: "Refistrar Proveedor",
         component: ProveedoresCreate,
       },
       {
-        path: "/admin/proveedores/:id",
-        name: "Detalles del proveedor",
-        component: ProveedoresShow,
+        path: "/admin/citas",
+        name: "Listado de citas",
+        component: CitasIndex,
+      },
+      {
+        path: "/admin/disponibilidades",
+        name: "Listado de la disponibilidad de citas",
+        component: DisponibilidadesIndex,
+      },
+      {
+        path: "/admin/tipoorganizacion",
+        name: "Listado de los tipos de organizacion",
+        component: TipoorganizacionIndex,
+      },
+      {
+        path: "/admin/beneficios",
+        name: "Listado de Beneficios",
+        component: BeneficiosIndex,
       },
       {
         path: "/admin/departamentos",
         name: "departamentos",
         component: DepartamentosIndex,
       },
+
+
+      
+      {
+        path: "/admin/presupuestos",
+        name: "presupuestos",
+        component: PresupuestosIndex,
+      },
+      
+      
       {
         path: "/admin/solicitudes",
         name: "solicitudes",
         component: SolicitudesIndex,
       },
-      {
-        path: "/admin/citas",
-        name: "citas",
-        component: CitasIndex,
-      },
+      
       
 
     ]
